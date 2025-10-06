@@ -3,23 +3,17 @@ import pickle
 import pandas as pd
 import numpy as np
 import os
-import requests
+import gdown
 
-MODEL_URL = "https://drive.google.com/uc?id=1abcXYZ12345"
+FILE_ID = "1wRwBfNnnpor2xatW5SoQnvTxEdSTazkG"  
 MODEL_PATH = "pipeline.pkl"
-        
-@st.cache_resource
-def load_model():
-    r = requests.get(MODEL_URL)
-    with open(MODEL_PATH, 'wb') as f:
-        f.write(r.content)  
 
-    with open(MODEL_PATH, 'rb') as f:  
-        pipeline = pickle.load(f)
+if not os.path.exists(MODEL_PATH):
+    url = f"https://drive.google.com/uc?id={FILE_ID}"
+    gdown.download(url, MODEL_PATH, quiet = False)
 
-    return pipeline
-
-pipeline = load_model()
+with open(MODEL_PATH, "rb") as f:
+    pipeline = pickle.load(f)
 
 st.set_page_config(page_title = 'Price Predictor', 
                    layout = 'wide')
