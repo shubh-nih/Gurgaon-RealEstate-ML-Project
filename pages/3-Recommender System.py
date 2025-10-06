@@ -45,7 +45,7 @@ st.markdown("Use the tools below to find nearby properties or get personalized r
 
 st.header('1. Find Properties Near a Location')
 
-with st.expander("Search for properties within a radius", expanded = True):
+with st.expander("Search for properties within a radius"):
     with st.form("proximity_search_form"):
         search_locations = sorted(location_df.columns.to_list())
         
