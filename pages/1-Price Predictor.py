@@ -10,11 +10,13 @@ MODEL_PATH = "pipeline.pkl"
         
 @st.cache_resource
 def load_model():
-    if not os.path.exists(MODEL_PATH):
-            r = requests.get(MODEL_URL)
-            open(MODEL_PATH, 'wb').write(r.content)
+    r = requests.get(MODEL_URL)
     with open(MODEL_PATH, 'wb') as f:
+        f.write(r.content)  
+
+    with open(MODEL_PATH, 'rb') as f:  
         pipeline = pickle.load(f)
+
     return pipeline
 
 pipeline = load_model()
