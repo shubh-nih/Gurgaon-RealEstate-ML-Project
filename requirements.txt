@@ -6,3 +6,4 @@ seaborn
 plotly
 wordcloud
 requests
+scikit-learn
