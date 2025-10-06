@@ -2,18 +2,6 @@ import streamlit as st
 import pickle
 import pandas as pd
 import numpy as np
-import os
-import gdown
-
-FILE_ID = "1wRwBfNnnpor2xatW5SoQnvTxEdSTazkG"  
-MODEL_PATH = "pipeline.pkl"
-
-if not os.path.exists(MODEL_PATH):
-    url = f"https://drive.google.com/uc?id={FILE_ID}"
-    gdown.download(url, MODEL_PATH, quiet = False)
-
-with open(MODEL_PATH, "rb") as f:
-    pipeline = pickle.load(f)
 
 st.set_page_config(page_title = 'Price Predictor', 
                    layout = 'wide')
@@ -91,7 +79,10 @@ if submitted:
         ]
 
         one_df = pd.DataFrame(data, columns = columns)
-            
+        
+        with open('pipeline.pkl', 'rb') as model:
+            pipeline = pickle.load(model)
+        
         prediction = np.expm1(pipeline.predict(one_df))[0]
         
         low_prediction = prediction - 0.255
