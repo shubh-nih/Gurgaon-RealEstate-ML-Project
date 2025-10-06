@@ -13,7 +13,7 @@ def load_model():
     if not os.path.exists(MODEL_PATH):
             r = requests.get(MODEL_URL)
             open(MODEL_PATH, 'wb').write(r.content)
-    with open(MODEL_PATH, 'rb') as f:
+    with open(MODEL_PATH, 'wb') as f:
         pipeline = pickle.load(f)
     return pipeline
 

@@ -9,9 +9,9 @@ import seaborn as sns
 st.set_page_config(page_title = 'Analysis Module', 
                    layout = 'wide')
 
-df = pd.read_csv(r'Datasets\gurgaon-data-viz.csv')
-text = pickle.load(open(r'Datasets\feature_text.pkl', 'rb'))
-featured_df = pickle.load(open(r'Datasets\features_df.pkl', 'rb'))
+df = pd.read_csv('Datasets/gurgaon-data-viz.csv')
+text = pickle.load(open('Datasets/feature_text.pkl', 'rb'))
+featured_df = pickle.load(open('Datasets/features_df.pkl', 'rb'))
 
 st.markdown("<h3 style='text-align: center;color: white; font-size: 48px; font-family: Modern Sans-Serif;'>Gurgaon Real Estate Analysis</h3>", unsafe_allow_html=True)
 
