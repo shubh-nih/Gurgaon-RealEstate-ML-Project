@@ -6,7 +6,7 @@ import numpy as np
 st.set_page_config(page_title = 'Price Predictor', 
                    layout = 'wide')
 
-with open('df.pkl', 'rb') as file:
+with open('Datasets/df.pkl', 'rb') as file:
     df = pickle.load(file)
 
 @st.dialog("⚠️ Missing Input")
@@ -80,7 +80,7 @@ if submitted:
 
         one_df = pd.DataFrame(data, columns = columns)
         
-        with open('pipeline.pkl', 'rb') as model:
+        with open('model/pipeline.pkl', 'rb') as model:
             pipeline = pickle.load(model)
         
         prediction = np.expm1(pipeline.predict(one_df))[0]
