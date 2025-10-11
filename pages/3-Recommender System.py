@@ -45,7 +45,7 @@ st.markdown("Use the tools below to find nearby properties or get personalized r
 
 st.markdown('---')
 
-st.header('2. Get Personalized Apartment Recommendations')
+st.header('Get Personalized Apartment Recommendations')
 st.markdown("Select a property you like to get recommendations for similar apartments based on features like amenities, size, and pricing.")
 
 with st.form("recommendation_form"):
