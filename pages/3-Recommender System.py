@@ -43,52 +43,6 @@ def recommend_properties_with_scores(property_name, top_n = 5):
 
 st.markdown("Use the tools below to find nearby properties or get personalized recommendations.")
 
-st.header('1. Find Properties Near a Location')
-
-with st.expander("Search for properties within a radius"):
-    with st.form("proximity_search_form"):
-        search_locations = sorted(location_df.columns.to_list())
-        
-        selected_location = st.selectbox(
-            'Select a Central Location',
-            [''] + search_locations,
-            index = 0,                
-            format_func = lambda x: x if x else 'Select a location...',
-            key = 'search_loc_select'
-        )
-
-        radius = st.number_input(
-            'Radius in Kilometers (Kms)',
-            min_value = 0.0, 
-            max_value = 100.0,
-            value = 0.0,    
-            step = 0.5,
-            key = 'radius_input'
-        )
-
-        search_button = st.form_submit_button('Search Proximity')
-
-    if search_button:
-        if not selected_location or radius <= 0.0:
-            st.error("🛑 Please **select a location** AND enter a **radius greater than 0** to perform the search.")
-        else:
-            st.subheader(f"Properties within {radius} km of **{selected_location}**")
-
-            result_ser = location_df[location_df[selected_location] < radius * 1000][selected_location].sort_values()
-
-            proximity_df = pd.DataFrame({
-                'Property Name': result_ser.index,
-                'Distance (kms)': (result_ser.values / 1000).round(2)
-            })
-            
-            proximity_df = proximity_df[proximity_df['Distance (kms)'] > 0.01] 
-
-            if not proximity_df.empty:
-                st.dataframe(proximity_df, width = 'stretch')
-                st.success(f"Found **{len(proximity_df)}** unique properties within the selected radius.")
-            else:
-                st.info("No other properties found within the selected radius.")
-
 st.markdown('---')
 
 st.header('2. Get Personalized Apartment Recommendations')
