@@ -10,52 +10,72 @@ st.markdown("""
         text-align: center;
         margin-bottom: 2rem;
     }
-    .module-card {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        padding: 1.5rem;
-        border-radius: 10px;
-        color: white;
-        margin: 1rem 0;
-    }
-    .feature-box {
-        background-color: #f3f4f6;
-        padding: 1.5rem;
-        border-radius: 8px;
-        border-left: 4px solid #3b82f6;
-        margin: 0.5rem 0;
-    }
-    .stat-box {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        padding: 2rem;
-        border-radius: 10px;
-        text-align: center;
-        color: white;
-    }
-    .pipeline-step {
-        background-color: #eff6ff;
-        padding: 1rem;
-        border-radius: 8px;
-        margin: 0.5rem 0;
-        border-left: 4px solid #3b82f6;
-    }
     </style>
 """, unsafe_allow_html = True)
 
+st.markdown("<h3 style='text-align: center;color: white; font-size: 60px; font-family: Modern Sans-Serif;'>Gurgaon Real Estate Project</h3>", unsafe_allow_html=True)
 
-st.markdown("<h3 style='text-align: center;color: white; font-size: 48px; font-family: Modern Sans-Serif;'>Gurgaon Real Estate Project</h3>", unsafe_allow_html=True)
+st.markdown('<p class="sub-header">Prediction | Analysis | Recommendation</p>', unsafe_allow_html = True)
 
-st.markdown('<p class="sub-header">Predictive Module | Analysis Module | Recommendation Module</p>', unsafe_allow_html = True)
+st.write("### Empowering Real Estate Insights through Machine Learning and Data Analytics")
 
 st.markdown("""
+Welcome to the **Gurgaon Real Estate Capstone Project**, a comprehensive data driven solution
+designed to help users understand, analyze, and make informed property decisions in the Gurgaon housing market.
 
-    This is an end-to-end Data Science Capstone Project focused on the Gurgaon real estate market.
-    The goal is to analyze, visualize, and predict property prices using advanced analytics and machine learning.
-
-        🧹Data Cleaning & Preprocessing — handled missing values, removed duplicates.
-        📊EDA — visualized price trends and sector-level property insights.
-        ⚙️Feature Engineering — enhanced data quality and predictive power.
-        🚫Outlier Detection — treated extreme values for model accuracy.
-        🌲Model Creation (Random Forest) — built and tuned for high accuracy.
-
+This project integrates **Machine Learning**, **Data Analysis**, and **Recommendation Algorithms**
+to deliver actionable insights and predictions.
 """)
+
+st.markdown('---')
+
+st.header("🚀 Overview")
+st.markdown("""
+This project is divided into three key modules:
+
+1. **🏷️ Price Predictor**  
+   - Predicts flat or house prices in Gurgaon based on features like location, area, furnishing, and more.  
+   - Uses ML algorithm **Random Forest Regressor**.  
+
+2. **📈 Data Analysis**  
+   - Explores property trends, price distributions, and correlations using **Seaborn**, **Matplotlib**, and **Plotly**.  
+   - Helps visualize key market insights such as area wise pricing, furnishing impact, and more.  
+
+3. **🏘️ Recommender System**  
+   - Suggests similar properties based on features, price range, and locality.  
+   - Uses **cosine similarity** and **feature engineering** to find the best matches.
+""")
+
+st.markdown('---')
+
+st.header("🧩 Project Workflow")
+st.markdown("""
+1. **Data Collection & Cleaning** – Handling missing values, and outlier detection.  
+2. **Feature Engineering** – Creating new meaningful variables like price per sq.ft, area bins, etc.  
+3. **Exploratory Data Analysis (EDA)** – Understanding the market dynamics visually.  
+4. **Model Training & Evaluation** – Building and fine tuning ML models for prediction.  
+5. **Deployment** – Interactive **Streamlit Web App** with Prediction, Analysis, and Recommendation modules.
+""")
+
+st.markdown('---')
+
+st.header("🛠️ Tech Stack")
+st.markdown("""
+**Languages & Tools:**  
+Python, Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn, Streamlit, Plotly
+
+**ML Models Used:**  
+Random Forest and Cosine Similarity for Recommendations
+""")
+
+st.markdown('---')
+
+st.write("""
+## 👨‍💻 Developer
+**Shubham Bisht** 
+""")
+st.markdown("📧 [Mail](mailto:shubhambisht149@gmail.com)")
+st.markdown("🪪 [LinkedIn](https://www.linkedin.com/in/shubhambisht7/)")
+st.caption("© 2025 Gurgaon Real Estate Project | Built using Streamlit")
+
 
